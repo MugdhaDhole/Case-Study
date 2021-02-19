@@ -4,14 +4,15 @@ import java.sql.Date;
 import java.util.TreeMap;
 
 public class Ticket {
-	int countrer;
-	String pnr;
-	Date travelDate;
+	private int countrer;
+	private String pnr;
+	private Date travelDate;
+
+	private TreeMap<Passenger, Integer> passengers = new TreeMap<Passenger, Integer>();
 
 	double fare;
 	double totalPrice;
 	Train train;
-	TreeMap<Passenger, Integer> passengers = new TreeMap<Passenger, Integer>();
 
 	public Ticket(Date travelDate, Train train) {
 		super();
@@ -19,20 +20,28 @@ public class Ticket {
 		this.train = train;
 	}
 
-	public String generatePRN() {
+	private String generatePRN() {
 		return pnr;
 	}
 
-	public double calcPassengerFare() {
+	private double calcPassengerFare(Passenger passenger) {
 		return fare;
 	}
 
-	public void addPassenger() {
+	public void addPassenger(String name, int age, char c) {
+		Passenger passenger = new Passenger(name, age, c);
+		passenger.getName();
+		passenger.getAge();
+		passenger.getGender();
 
 	}
 
-	public double calculateTotalTicketPrice() {
+	private double calculateTotalTicketPrice() {
 		return totalPrice;
+
+	}
+
+	private void generateTicket() {
 
 	}
 
